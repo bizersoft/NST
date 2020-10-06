@@ -68,11 +68,11 @@ class MainViewController: UIViewController {
         
         topContentView.addSubview(countLabel)
         topContentView.addConstraints(format: "H:|-20-[v0]", views: countLabel)
-        topContentView.addConstraints(format: "V:|-20-[v0]", views: countLabel)
+        topContentView.addConstraints(format: "V:|-40-[v0]", views: countLabel)
         
         topContentView.addSubview(totalCount)
         topContentView.addConstraints(format: "H:|-20-[v0]", views: totalCount)
-        topContentView.addConstraints(format: "V:|-40-[v0]|", views: totalCount)
+        topContentView.addConstraints(format: "V:|-80-[v0]|", views: totalCount)
         totalCount.text = "\(count)"
     }
     
@@ -107,7 +107,7 @@ class MainViewController: UIViewController {
     func setupMiddleView() {
         view.addSubview(middleContentView)
         view.addConstraints(format: "H:|[v0]|", views: middleContentView)
-        view.addConstraints(format: "V:[v0(200)]", views: middleContentView)
+        view.addConstraints(format: "V:[v0(140)]", views: middleContentView)
         middleContentView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         
         let tapNumberLabel = UILabel()
@@ -139,32 +139,31 @@ class MainViewController: UIViewController {
         
         middleContentView.addSubview(totalTap)
         middleContentView.addConstraints(format: "H:|-20-[v0]", views: totalTap)
-        middleContentView.addConstraints(format: "V:[v0]-20-|", views: totalTap)
+        middleContentView.addConstraints(format: "V:[v0]-40-|", views: totalTap)
         totalTap.text = "\(tap)"
         
         middleContentView.addSubview(timer)
-        middleContentView.addConstraints(format: "V:[v0]-20-|", views: timer)
+        middleContentView.addConstraints(format: "V:[v0]-40-|", views: timer)
         timer.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         middleContentView.addSubview(startedAt)
         middleContentView.addConstraints(format: "H:[v0]-20-|", views: startedAt)
-        middleContentView.addConstraints(format: "V:[v0]-20-|", views: startedAt)
+        middleContentView.addConstraints(format: "V:[v0]-40-|", views: startedAt)
     }
     
     var bottomContentView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.hexRed
         return view
     }()
     
     lazy var tapButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("+ 1", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 40)
         button.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
-        button.layer.borderWidth = 4.0
+        button.layer.borderWidth = 5.0
         button.layer.borderColor = UIColor.systemBlue.cgColor
-        button.layer.cornerRadius = 50
+        button.layer.cornerRadius = 75
         return button
     }()
     
@@ -175,10 +174,19 @@ class MainViewController: UIViewController {
         bottomContentView.bottomAnchor.constraint(equalTo: bottomLine.bottomAnchor).isActive = true
         
         bottomContentView.addSubview(tapButton)
-        bottomContentView.addConstraints(format: "H:[v0(100)]", views: tapButton)
-        bottomContentView.addConstraints(format: "V:[v0(100)]", views: tapButton)
+        bottomContentView.addConstraints(format: "H:[v0(150)]", views: tapButton)
+        bottomContentView.addConstraints(format: "V:[v0(150)]", views: tapButton)
         tapButton.centerXAnchor.constraint(equalTo: bottomContentView.centerXAnchor).isActive = true
-        tapButton.centerYAnchor.constraint(equalTo: bottomContentView.centerYAnchor).isActive = true
+        tapButton.centerYAnchor.constraint(equalTo: bottomContentView.centerYAnchor, constant: -50).isActive = true
+        
+        let tipLabel = UILabel()
+        tipLabel.text = Labels.Tip
+        tipLabel.textColor = .darkGray
+        tipLabel.font = UIFont.systemFont(ofSize: 18)
+        
+        bottomContentView.addSubview(tipLabel)
+        bottomContentView.addConstraints(format: "V:[v0]-40-|", views: tipLabel)
+        tipLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
     // MARK: - Action
