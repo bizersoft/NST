@@ -11,16 +11,16 @@ extension UIViewController {
     
     struct Screen {
         static var hasNotch: Bool {
-            return UIWindow(frame: UIScreen.main.bounds).safeAreaInsets.top > 20
+            UIWindow(frame: UIScreen.main.bounds).safeAreaInsets.top > 20
         }
     }
     
     var naviGap: CGFloat {
-        return Screen.hasNotch ? 88.0 : 64.0
+        Screen.hasNotch ? 88.0 : 64.0
     }
     
     var bottomGap: CGFloat {
-        return Screen.hasNotch ? 34.0 : 0.0
+        Screen.hasNotch ? 34.0 : 0.0
     }
     
     func topViewController() -> UIViewController? {

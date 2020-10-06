@@ -16,6 +16,8 @@
 		CAEFA0A8252BFFCE00086E67 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEFA0A7252BFFCE00086E67 /* UIView+Extension.swift */; };
 		CAEFA0AB252C002300086E67 /* Reusable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEFA0AA252C002300086E67 /* Reusable+Extension.swift */; };
 		CAEFA0AE252C00EF00086E67 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEFA0AD252C00EF00086E67 /* UIViewController+Extension.swift */; };
+		CAEFA0B2252C55E200086E67 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEFA0B1252C55E200086E67 /* UIColor+Extension.swift */; };
+		CAEFA0BA252C57B300086E67 /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEFA0B9252C57B300086E67 /* Labels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		CAEFA0A7252BFFCE00086E67 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		CAEFA0AA252C002300086E67 /* Reusable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reusable+Extension.swift"; sourceTree = "<group>"; };
 		CAEFA0AD252C00EF00086E67 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		CAEFA0B1252C55E200086E67 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		CAEFA0B9252C57B300086E67 /* Labels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Labels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,7 @@
 				CAEFA081252BDFC500086E67 /* AppDelegate.swift */,
 				CAEFA083252BDFC500086E67 /* SceneDelegate.swift */,
 				CAEFA09F252BFE0300086E67 /* Views */,
+				CAEFA0B4252C562200086E67 /* Constants */,
 				CAEFA09D252BFD7D00086E67 /* Extensions */,
 				CAEFA09B252BFD5500086E67 /* Supporting Files */,
 				CAEFA092252BDFC600086E67 /* Info.plist */,
@@ -88,6 +93,7 @@
 				CAEFA0A7252BFFCE00086E67 /* UIView+Extension.swift */,
 				CAEFA0AD252C00EF00086E67 /* UIViewController+Extension.swift */,
 				CAEFA0AA252C002300086E67 /* Reusable+Extension.swift */,
+				CAEFA0B1252C55E200086E67 /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -98,6 +104,14 @@
 				CAEFA0A0252BFE1200086E67 /* MainViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CAEFA0B4252C562200086E67 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				CAEFA0B9252C57B300086E67 /* Labels.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,8 +188,10 @@
 				CAEFA082252BDFC500086E67 /* AppDelegate.swift in Sources */,
 				CAEFA084252BDFC500086E67 /* SceneDelegate.swift in Sources */,
 				CAEFA0AE252C00EF00086E67 /* UIViewController+Extension.swift in Sources */,
+				CAEFA0BA252C57B300086E67 /* Labels.swift in Sources */,
 				CAEFA0A8252BFFCE00086E67 /* UIView+Extension.swift in Sources */,
 				CAEFA0A1252BFE1200086E67 /* MainViewController.swift in Sources */,
+				CAEFA0B2252C55E200086E67 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
