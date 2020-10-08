@@ -29,6 +29,7 @@ class HistoyViewController: UIViewController {
     
     lazy var historyTable: UITableView = {
         let table = UITableView()
+        table.separatorStyle = .none
         table.dataSource = self
         table.delegate = self
         table.registerCell(HistoryTabelCell.self)
@@ -54,7 +55,7 @@ extension HistoyViewController: UITableViewDataSource, UITableViewDelegate {
         let record = viewModel.records[indexPath.row]
         
         cell.textLabel?.text = "\(record.count)"
-        cell.detailTextLabel?.text = record.date.mediumShortString
+        cell.detailTextLabel?.text = record.startedAt.mediumShortString
         return cell
     }
     
@@ -74,7 +75,13 @@ class HistoryTabelCell: UITableViewCell {
     }
     
     func setupViews() {
-        backgroundColor = .hexGreen
+        selectionStyle = .none
+        let seperateLine = UIView()
+        seperateLine.backgroundColor = .lightGray
+        
+        addSubview(seperateLine)
+        addConstraints(format: "H:|-15-[v0]-15-|", views: seperateLine)
+        addConstraints(format: "V:[v0(0.5)]|", views: seperateLine)
     }
     
 }

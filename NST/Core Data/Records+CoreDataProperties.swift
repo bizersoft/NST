@@ -16,7 +16,7 @@ extension Records {
         return NSFetchRequest<Records>(entityName: "Records")
     }
 
-    @NSManaged public var date: Date
+    @NSManaged public var startedAt: Date
     @NSManaged public var count: Int64
 
 }

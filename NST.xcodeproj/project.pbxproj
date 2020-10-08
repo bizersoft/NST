@@ -12,6 +12,7 @@
 		CA110D76252E752900F55A43 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA110D75252E752900F55A43 /* HistoryViewModel.swift */; };
 		CA110D79252E7A8400F55A43 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA110D78252E7A8400F55A43 /* Dynamic.swift */; };
 		CA110D7C252E7B3200F55A43 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA110D7B252E7B3200F55A43 /* CoreDataManager.swift */; };
+		CAC3720B252F32F0003B4956 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC3720A252F32F0003B4956 /* Config.swift */; };
 		CACEACB9252EA55900DC6CA1 /* Records+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACEACB7252EA55900DC6CA1 /* Records+CoreDataClass.swift */; };
 		CACEACBA252EA55900DC6CA1 /* Records+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACEACB8252EA55900DC6CA1 /* Records+CoreDataProperties.swift */; };
 		CACEACBD252EE0A000DC6CA1 /* CoreDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACEACBC252EE0A000DC6CA1 /* CoreDataOperation.swift */; };
@@ -35,6 +36,7 @@
 		CA110D75252E752900F55A43 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		CA110D78252E7A8400F55A43 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		CA110D7B252E7B3200F55A43 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		CAC3720A252F32F0003B4956 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		CACEACB7252EA55900DC6CA1 /* Records+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Records+CoreDataClass.swift"; sourceTree = "<group>"; };
 		CACEACB8252EA55900DC6CA1 /* Records+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Records+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CACEACBC252EE0A000DC6CA1 /* CoreDataOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataOperation.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				CAEFA0B9252C57B300086E67 /* Labels.swift */,
+				CAC3720A252F32F0003B4956 /* Config.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				CA110D79252E7A8400F55A43 /* Dynamic.swift in Sources */,
 				CAEFA0AB252C002300086E67 /* Reusable+Extension.swift in Sources */,
 				CAEFA08C252BDFC500086E67 /* NST.xcdatamodeld in Sources */,
+				CAC3720B252F32F0003B4956 /* Config.swift in Sources */,
 				CAEFA082252BDFC500086E67 /* AppDelegate.swift in Sources */,
 				CACEACB9252EA55900DC6CA1 /* Records+CoreDataClass.swift in Sources */,
 				CA110D6A252E71DA00F55A43 /* HistoryViewController.swift in Sources */,

@@ -27,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         
         // Reset Core Data
-        // CoreDataManager.shared.reset()
+//        CoreDataManager.shared.reset()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

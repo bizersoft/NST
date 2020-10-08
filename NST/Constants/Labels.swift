@@ -12,15 +12,14 @@ struct Labels {
     static let History = "历史记录"
     
     // Top View
-    static let Count = "胎动次数"
+    static let CountTitle = "胎动次数"
     
     // Middle View
-    static let TapNumber = "点击次数"
-    static let Timer = "倒计时"
-    static let StartedAt = "开始时间"
+    static let TapTitle = "点击次数"
+    static let TimerTitle = "倒计时"
+    static let StartTitle = "开始时间"
     
     // Bottom View
-    static let PlusOne = "+ 1"
-    static let Tip = "5分钟内连续记录只算1次有效胎动"
+    static let TipTitle = "30秒内连续记录只算1次有效胎动"
     
 }

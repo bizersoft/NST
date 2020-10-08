@@ -23,6 +23,26 @@ class MainViewController: UIViewController {
         view.backgroundColor = .white
         
         setupViews()
+        
+        viewModel.tap.bindAndFire { tap in
+            self.tapLabel.text = "\(tap)"
+        }
+        
+        viewModel.count.bindAndFire { count in
+            self.totalCount.text = "\(count)"
+        }
+        
+        viewModel.timer.bindAndFire { timer in
+            self.timerLabel.text = "\(timer)"
+        }
+        
+        viewModel.start.bindAndFire { start in
+            self.startLabel.text = "\(start)"
+        }
+        
+        viewModel.trackButton.bindAndFire { title in
+            self.tapButton.setTitle(title, for: .normal)
+        }
     }
     
     // MARK: - View
@@ -61,7 +81,7 @@ class MainViewController: UIViewController {
         topContentView.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: -100).isActive = true
         
         let countLabel = UILabel()
-        countLabel.text = Labels.Count
+        countLabel.text = Labels.CountTitle
         countLabel.textColor = .darkText
         countLabel.font = UIFont.systemFont(ofSize: 20)
         
@@ -72,7 +92,6 @@ class MainViewController: UIViewController {
         topContentView.addSubview(totalCount)
         topContentView.addConstraints(format: "H:|-20-[v0]", views: totalCount)
         topContentView.addConstraints(format: "V:|-80-[v0]|", views: totalCount)
-        totalCount.text = "\(viewModel.count)"
     }
     
     var middleContentView: UIView = {
@@ -80,26 +99,24 @@ class MainViewController: UIViewController {
         return view
     }()
     
-    var totalTap: UILabel = {
+    var tapLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 40, weight: .light)
         label.textColor = UIColor.darkText
         return label
     }()
     
-    var timer: UILabel = {
+    var timerLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 40, weight: .light)
         label.textColor = UIColor.darkText
-        label.text = "60:00"
         return label
     }()
     
-    var startedAt: UILabel = {
+    var startLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 40, weight: .light)
         label.textColor = UIColor.darkText
-        label.text = "--:--"
         return label
     }()
     
@@ -109,45 +126,44 @@ class MainViewController: UIViewController {
         view.addConstraints(format: "V:[v0(140)]", views: middleContentView)
         middleContentView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         
-        let tapNumberLabel = UILabel()
-        tapNumberLabel.text = Labels.TapNumber
-        tapNumberLabel.textColor = .darkGray
-        tapNumberLabel.font = UIFont.systemFont(ofSize: 18)
+        let tapTitle = UILabel()
+        tapTitle.text = Labels.TapTitle
+        tapTitle.textColor = .darkGray
+        tapTitle.font = UIFont.systemFont(ofSize: 18)
         
-        let timerLabel = UILabel()
-        timerLabel.text = Labels.Timer
-        timerLabel.textColor = .darkGray
-        timerLabel.font = UIFont.systemFont(ofSize: 18)
+        let timerTitle = UILabel()
+        timerTitle.text = Labels.TimerTitle
+        timerTitle.textColor = .darkGray
+        timerTitle.font = UIFont.systemFont(ofSize: 18)
         
-        let startedAtLabel = UILabel()
-        startedAtLabel.text = Labels.StartedAt
-        startedAtLabel.textColor = .darkGray
-        startedAtLabel.font = UIFont.systemFont(ofSize: 18)
+        let startTitle = UILabel()
+        startTitle.text = Labels.StartTitle
+        startTitle.textColor = .darkGray
+        startTitle.font = UIFont.systemFont(ofSize: 18)
         
-        middleContentView.addSubview(tapNumberLabel)
-        middleContentView.addConstraints(format: "H:|-20-[v0]", views: tapNumberLabel)
-        middleContentView.addConstraints(format: "V:|-20-[v0]", views: tapNumberLabel)
+        middleContentView.addSubview(tapTitle)
+        middleContentView.addConstraints(format: "H:|-20-[v0]", views: tapTitle)
+        middleContentView.addConstraints(format: "V:|-20-[v0]", views: tapTitle)
+        
+        middleContentView.addSubview(timerTitle)
+        middleContentView.addConstraints(format: "V:|-20-[v0]", views: timerTitle)
+        timerTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        middleContentView.addSubview(startTitle)
+        middleContentView.addConstraints(format: "H:[v0]-20-|", views: startTitle)
+        middleContentView.addConstraints(format: "V:|-20-[v0]", views: startTitle)
+        
+        middleContentView.addSubview(tapLabel)
+        middleContentView.addConstraints(format: "H:|-20-[v0]", views: tapLabel)
+        middleContentView.addConstraints(format: "V:[v0]-40-|", views: tapLabel)
         
         middleContentView.addSubview(timerLabel)
-        middleContentView.addConstraints(format: "V:|-20-[v0]", views: timerLabel)
+        middleContentView.addConstraints(format: "V:[v0]-40-|", views: timerLabel)
         timerLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
-        middleContentView.addSubview(startedAtLabel)
-        middleContentView.addConstraints(format: "H:[v0]-20-|", views: startedAtLabel)
-        middleContentView.addConstraints(format: "V:|-20-[v0]", views: startedAtLabel)
-        
-        middleContentView.addSubview(totalTap)
-        middleContentView.addConstraints(format: "H:|-20-[v0]", views: totalTap)
-        middleContentView.addConstraints(format: "V:[v0]-40-|", views: totalTap)
-        totalTap.text = "\(viewModel.tap)"
-        
-        middleContentView.addSubview(timer)
-        middleContentView.addConstraints(format: "V:[v0]-40-|", views: timer)
-        timer.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        
-        middleContentView.addSubview(startedAt)
-        middleContentView.addConstraints(format: "H:[v0]-20-|", views: startedAt)
-        middleContentView.addConstraints(format: "V:[v0]-40-|", views: startedAt)
+        middleContentView.addSubview(startLabel)
+        middleContentView.addConstraints(format: "H:[v0]-20-|", views: startLabel)
+        middleContentView.addConstraints(format: "V:[v0]-40-|", views: startLabel)
     }
     
     var bottomContentView: UIView = {
@@ -157,7 +173,6 @@ class MainViewController: UIViewController {
     
     lazy var tapButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("+ 1", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 40)
         button.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
         button.layer.borderWidth = 5.0
@@ -178,14 +193,14 @@ class MainViewController: UIViewController {
         tapButton.centerXAnchor.constraint(equalTo: bottomContentView.centerXAnchor).isActive = true
         tapButton.centerYAnchor.constraint(equalTo: bottomContentView.centerYAnchor, constant: -50).isActive = true
         
-        let tipLabel = UILabel()
-        tipLabel.text = Labels.Tip
-        tipLabel.textColor = .darkGray
-        tipLabel.font = UIFont.systemFont(ofSize: 18)
+        let tipTitle = UILabel()
+        tipTitle.text = Labels.TipTitle
+        tipTitle.textColor = .darkGray
+        tipTitle.font = UIFont.systemFont(ofSize: 18)
         
-        bottomContentView.addSubview(tipLabel)
-        bottomContentView.addConstraints(format: "V:[v0]-40-|", views: tipLabel)
-        tipLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        bottomContentView.addSubview(tipTitle)
+        bottomContentView.addConstraints(format: "V:[v0]-40-|", views: tipTitle)
+        tipTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
     // MARK: - Action
@@ -196,10 +211,7 @@ class MainViewController: UIViewController {
     }
     
     @objc func handleTap() {
-        viewModel.count += 1
-        print(viewModel.count)
-        
-        viewModel.countOne()
+        viewModel.trackTap()
     }
 
 }
