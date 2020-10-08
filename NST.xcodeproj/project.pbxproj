@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA110D6A252E71DA00F55A43 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA110D69252E71DA00F55A43 /* HistoryViewController.swift */; };
+		CA110D72252E751A00F55A43 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA110D71252E751A00F55A43 /* MainViewModel.swift */; };
+		CA110D76252E752900F55A43 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA110D75252E752900F55A43 /* HistoryViewModel.swift */; };
+		CA110D79252E7A8400F55A43 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA110D78252E7A8400F55A43 /* Dynamic.swift */; };
+		CA110D7C252E7B3200F55A43 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA110D7B252E7B3200F55A43 /* CoreDataManager.swift */; };
+		CACEACB9252EA55900DC6CA1 /* Records+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACEACB7252EA55900DC6CA1 /* Records+CoreDataClass.swift */; };
+		CACEACBA252EA55900DC6CA1 /* Records+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACEACB8252EA55900DC6CA1 /* Records+CoreDataProperties.swift */; };
+		CACEACBD252EE0A000DC6CA1 /* CoreDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACEACBC252EE0A000DC6CA1 /* CoreDataOperation.swift */; };
+		CACEACC2252EF22600DC6CA1 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACEACC1252EF22600DC6CA1 /* Date+Extension.swift */; };
 		CAEFA082252BDFC500086E67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEFA081252BDFC500086E67 /* AppDelegate.swift */; };
 		CAEFA084252BDFC500086E67 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEFA083252BDFC500086E67 /* SceneDelegate.swift */; };
 		CAEFA08C252BDFC500086E67 /* NST.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CAEFA08A252BDFC500086E67 /* NST.xcdatamodeld */; };
@@ -21,6 +30,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA110D69252E71DA00F55A43 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		CA110D71252E751A00F55A43 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		CA110D75252E752900F55A43 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		CA110D78252E7A8400F55A43 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
+		CA110D7B252E7B3200F55A43 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		CACEACB7252EA55900DC6CA1 /* Records+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Records+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CACEACB8252EA55900DC6CA1 /* Records+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Records+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CACEACBC252EE0A000DC6CA1 /* CoreDataOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataOperation.swift; sourceTree = "<group>"; };
+		CACEACC1252EF22600DC6CA1 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		CAEFA07E252BDFC500086E67 /* NST.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NST.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAEFA081252BDFC500086E67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAEFA083252BDFC500086E67 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +65,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA110D6C252E730C00F55A43 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				CA110D7B252E7B3200F55A43 /* CoreDataManager.swift */,
+				CACEACBC252EE0A000DC6CA1 /* CoreDataOperation.swift */,
+				CACEACB7252EA55900DC6CA1 /* Records+CoreDataClass.swift */,
+				CACEACB8252EA55900DC6CA1 /* Records+CoreDataProperties.swift */,
+				CAEFA08A252BDFC500086E67 /* NST.xcdatamodeld */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		CA110D70252E750600F55A43 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CA110D71252E751A00F55A43 /* MainViewModel.swift */,
+				CA110D75252E752900F55A43 /* HistoryViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		CAEFA075252BDFC500086E67 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +108,8 @@
 				CAEFA081252BDFC500086E67 /* AppDelegate.swift */,
 				CAEFA083252BDFC500086E67 /* SceneDelegate.swift */,
 				CAEFA09F252BFE0300086E67 /* Views */,
+				CA110D70252E750600F55A43 /* ViewModels */,
+				CA110D6C252E730C00F55A43 /* Core Data */,
 				CAEFA0B4252C562200086E67 /* Constants */,
 				CAEFA09D252BFD7D00086E67 /* Extensions */,
 				CAEFA09B252BFD5500086E67 /* Supporting Files */,
@@ -82,7 +123,6 @@
 			children = (
 				CAEFA08F252BDFC600086E67 /* LaunchScreen.storyboard */,
 				CAEFA08D252BDFC600086E67 /* Assets.xcassets */,
-				CAEFA08A252BDFC500086E67 /* NST.xcdatamodeld */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -94,6 +134,8 @@
 				CAEFA0AD252C00EF00086E67 /* UIViewController+Extension.swift */,
 				CAEFA0AA252C002300086E67 /* Reusable+Extension.swift */,
 				CAEFA0B1252C55E200086E67 /* UIColor+Extension.swift */,
+				CACEACC1252EF22600DC6CA1 /* Date+Extension.swift */,
+				CA110D78252E7A8400F55A43 /* Dynamic.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -102,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				CAEFA0A0252BFE1200086E67 /* MainViewController.swift */,
+				CA110D69252E71DA00F55A43 /* HistoryViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,15 +226,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CACEACBA252EA55900DC6CA1 /* Records+CoreDataProperties.swift in Sources */,
+				CA110D79252E7A8400F55A43 /* Dynamic.swift in Sources */,
 				CAEFA0AB252C002300086E67 /* Reusable+Extension.swift in Sources */,
 				CAEFA08C252BDFC500086E67 /* NST.xcdatamodeld in Sources */,
 				CAEFA082252BDFC500086E67 /* AppDelegate.swift in Sources */,
+				CACEACB9252EA55900DC6CA1 /* Records+CoreDataClass.swift in Sources */,
+				CA110D6A252E71DA00F55A43 /* HistoryViewController.swift in Sources */,
 				CAEFA084252BDFC500086E67 /* SceneDelegate.swift in Sources */,
 				CAEFA0AE252C00EF00086E67 /* UIViewController+Extension.swift in Sources */,
 				CAEFA0BA252C57B300086E67 /* Labels.swift in Sources */,
+				CA110D76252E752900F55A43 /* HistoryViewModel.swift in Sources */,
 				CAEFA0A8252BFFCE00086E67 /* UIView+Extension.swift in Sources */,
+				CACEACBD252EE0A000DC6CA1 /* CoreDataOperation.swift in Sources */,
 				CAEFA0A1252BFE1200086E67 /* MainViewController.swift in Sources */,
 				CAEFA0B2252C55E200086E67 /* UIColor+Extension.swift in Sources */,
+				CA110D7C252E7B3200F55A43 /* CoreDataManager.swift in Sources */,
+				CA110D72252E751A00F55A43 /* MainViewModel.swift in Sources */,
+				CACEACC2252EF22600DC6CA1 /* Date+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

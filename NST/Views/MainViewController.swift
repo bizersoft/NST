@@ -11,8 +11,7 @@ class MainViewController: UIViewController {
     
     // MARK: - Property
     
-    var count = 0
-    var tap = 0
+    var viewModel = MainViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +72,7 @@ class MainViewController: UIViewController {
         topContentView.addSubview(totalCount)
         topContentView.addConstraints(format: "H:|-20-[v0]", views: totalCount)
         topContentView.addConstraints(format: "V:|-80-[v0]|", views: totalCount)
-        totalCount.text = "\(count)"
+        totalCount.text = "\(viewModel.count)"
     }
     
     var middleContentView: UIView = {
@@ -140,7 +139,7 @@ class MainViewController: UIViewController {
         middleContentView.addSubview(totalTap)
         middleContentView.addConstraints(format: "H:|-20-[v0]", views: totalTap)
         middleContentView.addConstraints(format: "V:[v0]-40-|", views: totalTap)
-        totalTap.text = "\(tap)"
+        totalTap.text = "\(viewModel.tap)"
         
         middleContentView.addSubview(timer)
         middleContentView.addConstraints(format: "V:[v0]-40-|", views: timer)
@@ -192,12 +191,15 @@ class MainViewController: UIViewController {
     // MARK: - Action
     
     @objc func handleHistory() {
-        print("Here")
+        let historyViewController = HistoyViewController()
+        navigationController?.pushViewController(historyViewController, animated: true)
     }
     
     @objc func handleTap() {
-        count += 1
-        print(count)
+        viewModel.count += 1
+        print(viewModel.count)
+        
+        viewModel.countOne()
     }
 
 }
